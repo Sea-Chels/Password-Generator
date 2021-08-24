@@ -16,8 +16,7 @@ function generatePassword(){
     var chooseUpCase = confirm("Do you want to include capital letters?");
     var chooseLowCase = confirm("Do you want to include lower case letters?");
     var chooseTxtSymbols = confirm("Do you want to include symbols? (i.e.: !@#$%^&*)");
-    var chooseNumbers = confirm("Do you want to include numbers?"); 
-    console.log(password)} else if (passLength < 8 || passLength > 128) {
+    var chooseNumbers = confirm("Do you want to include numbers?"); } else if (passLength < 8 || passLength > 128) {
           alert("Please enter a valid number between 8 and 128."); 
           generatePassword();
       } 
@@ -40,8 +39,8 @@ function generatePassword(){
       for (let i = 0 ; i < passwordLength; i++) {
         var randomizing = Math.floor(Math.random() * characterArray.length);
         generatedPassword += characterArray[randomizing]
-      }
-      console.log(generatedPassword);
+        }
+      console.log("my secure password is " + generatedPassword);
 
       var passwordText = document.querySelector("#password");
       passwordText.value = generatedPassword;
@@ -49,11 +48,8 @@ function generatePassword(){
 }
 //I have no clue why my FOR LOOP is not working UGGGHHHH  
 
-// Write password to the #password input
-function writePassword(){
-  var password = generatePassword();}
 // Add event listener to generate button
-generateBtn.addEventListener("click", writePassword);
+generateBtn.addEventListener("click", generatePassword);
 
 
 //steps to help me understand how to make this: 
